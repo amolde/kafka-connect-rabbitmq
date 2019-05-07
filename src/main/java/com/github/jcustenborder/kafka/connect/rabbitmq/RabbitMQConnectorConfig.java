@@ -83,7 +83,7 @@ class RabbitMQConnectorConfig extends AbstractConfig {
   public RabbitMQConnectorConfig(ConfigDef definition, Map<?, ?> originals) {
     super(definition, originals);
     this.username = this.getString(USERNAME_CONFIG);
-    this.password = this.getString(PASSWORD_CONFIG);
+    this.password = this.getPassword(PASSWORD_CONFIG).value();
     this.virtualHost = this.getString(VIRTUAL_HOST_CONFIG);
     this.requestedChannelMax = this.getInt(REQUESTED_CHANNEL_MAX_CONFIG);
     this.requestedFrameMax = this.getInt(REQUESTED_FRAME_MAX_CONFIG);
